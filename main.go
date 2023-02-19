@@ -7,17 +7,17 @@ import (
 
 func main() {
 	fmt.Println("Entry point")
-	list()
+	listArgs()
 }
 
 func HelloWorld() string {
 	return "Hello World!"
 }
 
-func list() {
+func listArgs() {
 	var s, sep string
-	for i := 1; i < len(os.Args); i++ {
-		s += sep + os.Args[i]
+	for _, arg := range os.Args[1:] {
+		s += sep + arg
 		sep = " "
 	}
 	fmt.Println(s)
